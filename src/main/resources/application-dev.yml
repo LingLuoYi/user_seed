@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: worker
+  datasource:
+    url: jdbc:mysql://linglouyi.com:3306/user?serverTimezone=GMT%2B8&useSSL=false
+    username: root
+    password: "****"
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      minimum-idle: 10
+      maximum-pool-size: 25
+      auto-commit: true
+      idle-timeout: 30000
+      pool-name: DatebookHikariCPUser
+      max-lifetime: 1800000
+      connection-timeout: 30000
+      connection-test-query: SELECT 1
+      validation-timeout: 1000
+    type: com.zaxxer.hikari.HikariDataSource
+  jpa:
+    hibernate:
+      ddl-auto: update
+  redis:
+    host: linglouyi.com
+    port: 6379
+    timeout: 30000
+    password: "****"
+    database: 1
